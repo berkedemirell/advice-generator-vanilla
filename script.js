@@ -5,7 +5,8 @@ const id = document.querySelector(".id")
 
 
 const fetchData = () => {
-  fetch("https://api.adviceslip.com/advice").then((res) => {
+  let random = Math.ceil(Math.random() * 224)
+  fetch(`https://api.adviceslip.com/advice/${random}`).then((res) => {
     return res.json();
   }).then((data) => {
     adviceText.innerHTML = data.slip.advice;
